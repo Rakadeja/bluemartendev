@@ -1,0 +1,26 @@
+img {
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+// ------- SVG ------- */
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+.shape .svg-gradient-path {
+	paint-order: stroke;
+	stroke: #00044f;
+	stroke-width: 0.66px;
+	fill: url(#svg-shape-gradient);
+}
+
+#svg-shape-gradient {
+	--color-1: #ff00fe;
+	--color-2: #00044f;
+	--color-3: #0082ff;
+	--color-4: #00e8ff;
+}
+// ------- SVG ------- */

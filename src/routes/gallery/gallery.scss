@@ -1,0 +1,33 @@
+.gallery-box {
+    padding: 2rem;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    border-radius: var(--corner-roundness);
+    box-shadow: inset 0px 0px 42px 0px rgba(0, 0, 0, 0.512);
+    border-collapse: collapse;
+
+    .art-piece {
+        border: 1px solid white;
+        padding: 1rem;
+        text-align: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.64s ease-in-out;
+
+            &:hover {
+				transform: scale(1.2);
+                opacity: 1;
+			}
+
+            &:focus {
+                outline: solid 1.2px white;
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+

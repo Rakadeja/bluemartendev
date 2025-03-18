@@ -1,0 +1,29 @@
+.container {
+	padding: 0.88em;
+	border-radius: var(--corner-roundness);
+	// box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.128);
+	// border-collapse: collapse;
+}
+
+.flex-grid-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	background: var(--gradient-1);
+}
+
+.flex-grid-item {
+    // flex: 0 0 100%;
+    padding: 0.1em;
+	margin: 0.1em;
+	background-color: var(--color-blue-2);
+	opacity: 0.5;
+
+	transition: color 0.16s ease-in-out,
+	opacity 0.16s ease-in-out;
+
+	&:hover {
+        opacity: 1;
+    }
+}

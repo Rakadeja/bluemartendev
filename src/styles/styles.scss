@@ -1,0 +1,86 @@
+@import "./globals.scss";
+
+@import "./flex.scss";
+
+@import "./buttons.scss";
+@import "./images.scss";
+@import "./text.scss";
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	width: 100%;
+	max-width: 64rem;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.app {
+	display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background-attachment: fixed;
+	background-color: var(--color-lblue-1);
+	background: linear-gradient( 180deg, var(--color-blue-4) 8%, var(--color-blue-3) 13%, var(--color-lblue-0) 77.77%, var(--color-blue-4) 89%, black 100%);
+}
+
+pre {
+	color: white;
+	font-size: 16px;
+	font-family: var(--font-family);
+	background-color: var(--color-secondary);
+	border-radius: 3px;
+	box-shadow: var(--shadow-drop);
+	padding: 0.5em;
+	overflow-x: auto;
+}
+
+.text-column {
+	display: flex;
+	max-width: 48rem;
+	flex: 0.6;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+input {
+	font-size: inherit;
+	font-family: var(--font-family);
+}
+
+.visually-hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	white-space: nowrap;
+}
+@media (min-width: 720px) {
+	h1 {
+		font-size: 2.4rem;
+	}
+}
+ 
+ @keyframes wiggle { 
+	0% { transform: translateX(0); } 
+	25% { transform: translateX(-2px) rotateY(8deg); } 
+	50% { transform: translateX(1px) rotateX(0deg); } 
+	75% { transform: translateX(-2px) rotateX(-12deg); } 
+	100% { transform: translateX(0); }
+ }
+
+ .wiggle { 
+	animation: wiggle 1.2s ease-in-out;
+ } 

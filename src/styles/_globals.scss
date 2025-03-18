@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Ubuntu', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap') format('truetype');
+}
+
+:root {
+	// Global Variables */
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Oxygen-Sans, Cantarell, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	
+	// ------- COLOR SECTION ------- */
+	// Main Color (Blue) */
+	--color-blue-0: #322FC9;
+	--color-blue-1: #7674DD;
+	--color-blue-2: #524FD1;
+	--color-blue-3: #1714B2;
+	--color-blue-4: #120F88;
+	// Main Complement Color (Gold) */
+	--color-gold-0: #FF9A1A;
+	--color-gold-1: #FFC072;
+	--color-gold-2: #FFAD46;
+	--color-gold-3: #FF8E00;
+	--color-gold-4: #C26C00;
+	// Secondary Color (Pale Blue) */
+	--color-lblue-0: #1E7FBE;	
+	--color-lblue-1: #66AAD6;
+	--color-lblue-2: #3F92C8;
+	--color-lblue-3: #0766A3;
+	--color-lblue-4: #064E7C;
+	// Secondary Complement (Yellow) */
+	--color-yellow-0: #FFC71A;
+	--color-yellow-1: #FFDC72;
+	--color-yellow-2: #FFD246;
+	--color-yellow-3: #FFC000;
+	--color-yellow-4: #C29300;
+
+	// Common Color Variables */
+	--color-primary: #0a1829FF;
+	--color-secondary: rgb(21, 49, 83);
+	--color-tertiary: rgb(33, 79, 135);
+	--color-accent: #3c80ffFF;
+	--color-brand: #f7ca00FF;
+	--color-text-heading: #f7ca00FF;
+	--color-text: rgb(221, 235, 255);
+	--gradient-1: linear-gradient( 180deg, var(--color-blue-4) 0%, var(--color-blue-0) 10.45%, var(--color-blue-1) 41.35% );
+	--gradient-2: linear-gradient( 180deg, var(--color-gold-0) 0%, var(--color-blue-0) 10.45%, var(--color-blue-1) 41.35% );
+	--shadow-drop: 0px 0px 20px 0px rgba(0, 0, 0, 0.512);
+	--shadow-inset: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.128);
+	// ------- END COLOR SECTION ------- */
+
+	// Layout Variables */
+	--column-width: 42rem;
+	--column-margin-top: 4rem;
+	--corner-roundness: 1.6rem;
+}

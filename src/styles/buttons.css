@@ -1,0 +1,50 @@
+button {
+  font-size: inherit;
+  font-family: var(--font-family);
+  padding: 0.66rem 1.33rem;
+  margin: 0.66rem 0;
+  font-size: 1.33rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  background-color: red;
+  border: 1px solid transparent;
+  border-radius: 0.33rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+button:hover {
+  color: red;
+}
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.btn {
+  padding: 0.66rem 1.33rem;
+  margin: 0.66rem 0;
+  font-size: 1.33rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--color-blue-4);
+  background-color: var(--color-gold-0);
+  border: 1px solid transparent;
+  border-radius: 0.33rem;
+  transition: color 0.16s ease-in-out, background-color 0.16s ease-in-out, border-color 0.16s ease-in-out, box-shadow 0.16s ease-in-out;
+}
+.btn:hover {
+  color: var(--color-blue-3);
+  background-color: var(--color-brand);
+  box-shadow: 0 0 0.22rem var(--color-yellow-1);
+  border-color: var(--color-yellow-1);
+}
+.btn:focus {
+  color: var(--color-blue-3);
+  background-color: var(--color-brand);
+}
+.btn:focus:not(:focus-visible) {
+  box-shadow: 0 0 0.44rem white;
+  outline: solid 0.1rem white;
+}/*# sourceMappingURL=buttons.css.map */

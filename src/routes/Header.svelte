@@ -1,8 +1,12 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
+	import logo from '$lib/images/bm_favicon.png';
 	import github from '$lib/images/github.svg';
 </script>
+
+<style>
+	@import url('../styles/header.css');
+</style>
 
 <header>
 	<div class="corner">
@@ -37,7 +41,7 @@
 		</a>
 	</div>
 </header>
-
+<!-- 
 <style>
 	header {
 		display: flex;
@@ -126,4 +130,4 @@
 	a:hover {
 		color: var(--color-theme-1);
 	}
-</style>
+</style> -->

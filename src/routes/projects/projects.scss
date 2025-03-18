@@ -1,0 +1,44 @@
+.project-card {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+	padding: 1% 0.88em 1em 0.88em;
+    margin: 0.25em 0.88em 0.25em 0.88em;
+	min-width: 8em;
+	min-height: 16em;
+ }
+
+ .card-icon {
+	display: inline-block;
+	box-shadow: 0 0.2rem 0.55rem rgba(0, 0, 0, 0.512);
+ }
+
+ .card-title {
+	display: inline-flex;
+	order: 0;
+	font-weight: 700;
+	font-size: 1.3em;
+	margin-bottom: 0;
+	transition: color 0.32s ease-in-out;
+
+	&:hover {
+		color: var(--color-yellow-2);
+	}
+ }
+
+ .card-text {
+	order: 1;
+	font-style: italic;
+	color: var(--color-text);
+	margin-top: 0;
+ }
+
+ .card-buttons {
+	order: 2;
+	// button {
+
+	// }
+ }

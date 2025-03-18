@@ -1,10 +1,26 @@
+<script>
+	import { fade, fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
+
+	let animate = false;
+
+	onMount(() => {
+		animate = true;
+	});
+</script>
+
+<style>
+	@import url('./about.css');
+	@import url('../../styles/styles.css');
+</style>
+
 <svelte:head>
 	<title>About</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 
-<div class="text-column">
-	<h1>About this app</h1>
+<div class="text-column" in:fade={{delay: 1000, duration: 2000}} out:fly={{ y:200, duration:999}}>
+	<h1 class="page-title">About this app</h1>
 
 	<p>
 		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the

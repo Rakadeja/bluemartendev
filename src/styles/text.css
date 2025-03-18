@@ -1,0 +1,36 @@
+h1 {
+  color: var(--color-text-heading);
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  color: var(--color-text-heading);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+p {
+  color: var(--color-text);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-brand);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.page-title {
+  color: var(--color-text-heading);
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.page-description {
+  color: var(--color-text);
+}/*# sourceMappingURL=text.css.map */

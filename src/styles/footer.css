@@ -4,6 +4,10 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 0.88em;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 footer a {
   font-weight: bold;

@@ -1,28 +1,59 @@
-<script>
+<script lang="ts">
+	import '../styles/styles.css';
+
 	import Navbar from './Navbar.svelte';
 	import Footer from './Footer.svelte';
-	import '../styles/styles.css';
-	import { Canvas } from '@threlte/core'
-    // import ThrelteScene from './ThrelteScene.svelte';
-	
-    // import ThreeScene from './ThreeScene.svelte';
+	import ThrelteScene from './ThrelteScene.svelte'; // ✅ Import the 3D scene
+
+	import { onDestroy, onMount } from 'svelte';
+	import { writable } from 'svelte/store';
+	import { appState, timeSpent, changeState } from '../lib/stores/stateMachine.ts';
+
+	let interval: NodeJS.Timeout;
+
+	// import AnimationDebugControls from '../lib/debug/AnimationDebugControls.svelte';
+
+	// // ✅ Define writable stores here
+	// export let positionStore = writable([0, 0, 0]);
+	// export let scaleStore = writable([1, 1, 1]);
+	// export let rotationStore = writable([0, 0, 0]);
+	// export let actionIndexStore = writable(0);
+
+	onMount(() => {
+		changeState('active'); // Set initial state to active
+		let seconds = 0;
+		interval = setInterval(() => {
+			seconds += 1;
+			timeSpent.set(seconds);
+
+			// If user is on the page for more than a minute, change animation
+			if (seconds >= 60) {
+				changeState('animationTriggered');
+			}
+		}, 1000);
+	});
+
+	onDestroy(() => {
+		clearInterval(interval);
+		changeState('inactive');
+	});
 </script>
 
 <div class="app">
 	<Navbar />
 
 	<main>
-		<Canvas>
-			<!-- <ThreeScene /> -->
-			<!-- <ThrelteScene /> -->
-		</Canvas>
-
-		<slot />
-		<!-- <div class="slot-frame">
+		<!-- {#key sceneKey} -->
+		<div class="frame-3d">
+			<ThrelteScene />
+		</div>
+		<!-- {/key} -->
+		<div class="frame-slot">
 			<slot />
-		</div> -->
+		</div>
 	</main>
 
 	<Footer />
+	<!-- ✅ Debug UI modifies store values -->
+	<!-- <AnimationDebugControls {positionStore} {scaleStore} {rotationStore} {actionIndexStore} /> -->
 </div>
-

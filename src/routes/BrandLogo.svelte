@@ -1,10 +1,9 @@
 <script>
     // document.querySelector('#header-shape-gradient').style.setProperty('--color-stop', "#f5f7f9");
-    import logo from '$lib/images/bm_favicon.png';
 </script>
 
 <a href="/">
-    <img src={logo} alt="Blue Marten's Brand Logo, a blue pine marten!" />
+    <img src="/images/bm_favicon.png" alt="Blue Marten's Brand Logo, a blue pine marten!" />
 </a>
 
 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="shape">

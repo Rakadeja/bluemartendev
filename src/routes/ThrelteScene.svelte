@@ -1,32 +1,44 @@
-<script lang="ts">
-  import { T } from '@threlte/core'
+<script>
+	import { T, Canvas } from '@threlte/core';
+	// import { Motion } from '@threlte/motion';
 
-  // import { SilgiiHead } from '../lib/assets/models/silgii/SilgiiHeadLP.svelte'
+	import { writable } from 'svelte/store';
+	import SilgiiHeadAttempt2 from '../lib/assets/models/SilgiiHeadAttempt2.svelte';
+	import AnimationDebugControls from '../lib/debug/AnimationDebugControls.svelte';
 
-  import Model from '../lib/assets/models/LPSilgii/Head.svelte';
+	// let myOpacity = 0;
 
-  // import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
-  // import { useLoader } from '@threlte/core'
+	// ✅ Define writable stores
+	// const position = writable([0, 0, 0]);
+	// const scale = writable([1, 1, 1]);
+	// const rotation = writable([0, 0, 0]);
+	// const actionIndex = writable(0);
 
-  // // Load a GLTF model from a file
-  // const gltf = useLoader(GLTFLoader).load('../lib/assets/models/silgii_lowpoly_head.gltf')
+  	// ✅ Define writable stores here
+    export let positionStore = writable([-7, 2, 0]);
+	export let scaleStore = writable([0.25, 0.25, 0.25]);
+	export let rotationStore = writable([0.5, 1.2, 0]);
+	export let actionIndexStore = writable(0);
 </script>
 
-<T.PerspectiveCamera
-  position={[10, 10, 10]}
-  on:create={({ ref }) => {
-    ref.lookAt(0, 0, 0)
-  }}
-/>
+<Canvas>
+	<T.AmbientLight intensity={4.32} />
+	<T.DirectionalLight position={[5, 5, 5]} intensity={0.32} />
+	<T.OrthographicCamera position={[0, 0, 5]} />
 
-<Model
-  position.x={10}
-  scale={1.5}
-  rotation.y={Math.PI / 2}
-/>
-<!-- <SilgiiHead /> -->
+	<!-- ✅ Correctly pass store values -->
+	<SilgiiHeadAttempt2
+  positionStore={positionStore} 
+  scaleStore={scaleStore} 
+  rotationStore={rotationStore} 
+  actionIndexStore={actionIndexStore}
+	/>
+</Canvas>
 
-<T.Mesh>
-  <T.BoxGeometry args={[1, 1, 1]} />
-  <T.MeshBasicMaterial color="red" />
-</T.Mesh>
+	<!-- ✅ Debug UI modifies store values -->
+	<AnimationDebugControls
+  positionStore={positionStore} 
+  scaleStore={scaleStore} 
+  rotationStore={rotationStore} 
+  actionIndexStore={actionIndexStore}
+	/>

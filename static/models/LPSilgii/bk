@@ -1,0 +1,78 @@
+<script>
+  import { Group, LoopRepeat } from 'three';
+  import { T } from '@threlte/core';
+  import { useGltf, useGltfAnimations } from '@threlte/extras';
+  import { onMount } from 'svelte';
+  
+  export let position = [0, 0, -4.32];
+  export let scale = 0.64;
+  export let rotation = [0, 0, 0];
+
+  export let fallback = null;
+  export let error = null;
+  export let children = null;
+  export let ref = new Group();
+  export let props = {}; 
+
+  // ✅ Load the GLTF
+  const gltf = useGltf('src/lib/assets/models/LPSilgii/SilgiiHeadAttempt2.glb');
+
+  // ✅ Extract animations (Svelte store)
+  export const { actions, mixer } = useGltfAnimations(gltf, ref);
+
+  function playAnimation() {
+    actions.subscribe(($actions) => {
+      if ($actions?.current) {
+        console.log('🎬 Available Animations:', $actions.current);
+
+        const animation = $actions.current['SideToSide']; // ✅ Correct name access
+        if (animation) {
+          console.log('🎬 Playing animation: SideToSide');
+          animation.reset().setLoop(LoopRepeat).play();
+        } else {
+          console.warn('🚨 Animation "SideToSide" not found!', $actions.current);
+        }
+      } else {
+        console.warn('⏳ Waiting for animations to load...');
+      }
+    });
+  }
+
+  onMount(() => {
+    playAnimation(); // Automatically try playing when animations load
+  });
+</script>
+
+<T is={ref} dispose={false} {...props}>
+  {#await gltf}
+    {#if fallback}
+      {fallback()}
+    {/if}
+  {:then gltf}
+    <T.Group name="Scene" {position} {scale} {rotation} visible={true}>
+      <T.Group name="Armature">
+        <T is={gltf.nodes.Root} />
+        <T.Group name="SilgiiLP_Head">
+          <T.Mesh
+            name="SilgiiLP_Head_1"
+            geometry={gltf.nodes.SilgiiLP_Head_1.geometry}
+            material={gltf.materials.SilgiiLPHeadMat}
+          />
+          <T.Mesh
+            name="SilgiiLP_Head_2"
+            geometry={gltf.nodes.SilgiiLP_Head_2.geometry}
+            material={gltf.materials.SilgiiLPHeadTransparentMat}
+          />
+        </T.Group>
+      </T.Group>
+    </T.Group>
+  {:catch err}
+    {#if error}
+      {error({ error: err })}
+    {/if}
+  {/await}
+
+  {#if children}
+    {children({ ref })}
+  {/if}
+</T>

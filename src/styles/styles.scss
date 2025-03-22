@@ -8,8 +8,11 @@
 
 main {
 	flex: 1;
+	// flex-grow: 0;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	padding: 1rem;
 	width: 100%;
 	max-width: 64rem;
@@ -20,12 +23,20 @@ main {
 .app {
 	display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
 }
 
-body {
-	min-height: 100vh;
+html, body {
+	min-height: 100vh; /* Ensures the viewport height is respected */
 	margin: 0;
+	padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
 	background-attachment: fixed;
 	background-color: var(--color-lblue-1);
 	background: linear-gradient( 180deg, var(--color-blue-4) 8%, var(--color-blue-3) 13%, var(--color-lblue-0) 77.77%, var(--color-blue-4) 89%, black 100%);
@@ -40,6 +51,72 @@ pre {
 	box-shadow: var(--shadow-drop);
 	padding: 0.5em;
 	overflow-x: auto;
+}
+
+.frame-slot {
+    border: 2px solid white;
+    border-radius: 3px;
+    box-shadow: var(--shadow-drop);
+    padding: 4px 4px 24px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%; /* Make the frame take up the full width */
+    height: 100%; /* Make the frame take up the full height */
+}
+
+.frame-3d {
+    position: fixed; /* Makes it float above everything and stay in place relative to the viewport */
+    top: 50%; /* Centers it vertically */
+    left: 50%; /* Centers it horizontally */
+    transform: translate(-50%, -50%); /* Offsets to align the center of the box with the center of the viewport */
+    
+    // width: 32vw; /* Ensure visible size */
+    // height: 32vh;
+    // max-width: 90vw;
+    // max-height: 90vh;
+	width: 100%;
+	height: 100%;
+    
+    // aspect-ratio: 16 / 9; /* Keep if needed */
+    
+    // border: 1px solid white;
+    // box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999; /* Ensures it is on top of other elements */
+    pointer-events: none; /* Allows interaction */
+    
+		opacity: 0;
+		animation: fadeIn 2s ease-in forwards; /* Adjust duration as needed */
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+	/* ✅ Ensure 3D scene doesn't cover UI */
+	.threlte-container {
+		position: fixed; /* Keeps it in place */
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 1; /* Ensures it stays in the foreground */
+		pointer-events: none; /* Allows interaction with the UI */
+	}
+
+.canvas-3d {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .text-column {

@@ -1,0 +1,35 @@
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	max-width: none;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0.88em;
+
+	text-align: center;
+	// border: 2px solid #fff;
+	background-color: transparent;
+	background: linear-gradient(to bottom, rgba(0, 0, 255, 0), black);
+}
+
+.footer svg {
+	fill: var(--color-brand);
+    width: 2.2em;
+    height: 2.2em;
+    margin-right: 0.5em;
+}
+
+.footer a {
+	font-weight: bold;
+}
+
+.footer p {
+	font-weight: 500;
+	margin: 0;
+	color: var(--color-brand);
+}

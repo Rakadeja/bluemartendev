@@ -1,23 +1,19 @@
 <script lang="ts">
 	import '../styles/styles.css';
 
-	import Navbar from '../lib/components/Navbar.svelte';
-	import Footer from '../lib/components/Footer.svelte';
-	import ThrelteScene from '../lib/components/ThrelteScene.svelte'; // Import the 3D scene
+	import Navbar from '../lib/components/navbar/Navbar.svelte';
+	import Footer from '../lib/components/footer/Footer.svelte';
+	import ThrelteScene from '../lib/components/3d/ThrelteScene.svelte'; // Import the 3D scene
+	import DebugBorders from '../lib/debug/DebugBorders.svelte';
 
 	import { onDestroy, onMount } from 'svelte';
 	import { writable } from 'svelte/store';
+	import { fade, slide } from 'svelte/transition';
+	// import { flip } from 'svelte/animate';
+
 	import { appState, timeSpent, changeState } from '../lib/stores/stateMachine.ts';
 
 	let interval: NodeJS.Timeout;
-
-	// import AnimationDebugControls from '../lib/debug/AnimationDebugControls.svelte';
-
-	//  Define writable stores
-	// export let positionStore = writable([0, 0, 0]);
-	// export let scaleStore = writable([1, 1, 1]);
-	// export let rotationStore = writable([0, 0, 0]);
-	// export let actionIndexStore = writable(0);
 
 	onMount(() => {
 		changeState('active'); // Set initial state to active
@@ -39,21 +35,18 @@
 	});
 </script>
 
-<div class="app">
+<div id="app" class="app">
 	<Navbar />
-
 	<main>
 		<!-- {#key sceneKey} 😭 --> 
 		<div class="frame-3d">
 			<ThrelteScene />
 		</div>
 		<!-- {/key} -->
-		<div class="frame-slot">
+		<div class="frame-slot" transition:slide>
 			<slot />
+			<DebugBorders />
 		</div>
 	</main>
-
 	<Footer />
-	<!-- Debug UI modifies store values -->
-	<!-- <AnimationDebugControls {positionStore} {scaleStore} {rotationStore} {actionIndexStore} /> -->
 </div>

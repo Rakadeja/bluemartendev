@@ -43,12 +43,15 @@
 	--color-text: rgb(221, 235, 255);
 	--gradient-1: linear-gradient( 180deg, var(--color-blue-4) 0%, var(--color-blue-0) 10.45%, var(--color-blue-1) 41.35% );
 	--gradient-2: linear-gradient( 180deg, var(--color-gold-0) 0%, var(--color-blue-0) 10.45%, var(--color-blue-1) 41.35% );
+	--gradient-3: linear-gradient(180deg, var(var(--color-blue-4) 0%, black 50%, var(--color-primary) 64%));
 	--shadow-drop: 0px 0px 20px 0px rgba(0, 0, 0, 0.512);
 	--shadow-inset: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.128);
+	
 	// ------- END COLOR SECTION ------- */
 
 	// Layout Variables */
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
-	--corner-roundness: 1.6rem;
+	--corner-roundness: 0.64rem;
+	--border-radius: 6px;
 }

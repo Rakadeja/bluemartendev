@@ -9,7 +9,7 @@
 	}
 </script>
 
-<header>
+<header class="fadeIn">
   <div class="navbar">
     <div class="container">
       <div class="brand-logo">

@@ -1,0 +1,36 @@
+
+.debug-borders * {
+    border: none;
+}
+
+.debug-borders *:hover {
+    border: 2px solid red;
+}
+
+.debug-borders *:focus {
+    border: 1px dashed blue;
+}
+
+.debug-borders *:active {
+    border: 2px solid yellow;
+}
+
+.debug-borders *:focus-visible {
+    border: 2px solid orange;
+}
+
+.debug-borders *:focus-within {
+    border: 2px solid purple;
+}
+
+.debug-borders *:focus-visible:hover {
+    border: 2px solid pink;
+}
+
+.debug-borders *:focus-within:hover {
+    border: 2px solid lime;
+}
+
+.debug-borders *:focus-visible:focus-within {
+    border: 2px solid cyan;
+}

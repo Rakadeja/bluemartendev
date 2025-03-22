@@ -10,20 +10,32 @@ button {
 	text-align: center;
 	white-space: nowrap;
 
-	background-color: red;
+	background-color: var(--color-blue-4);
 
 	border: 1px solid transparent;
 	border-radius: 0.33rem;
 
 	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
+	color: white;
+
 	&:hover {
-		color: red;
+		color: var(--color-blue-3);
+		background-color: var(--color-brand);
+
+		box-shadow: 0 0 0.22rem var(--color-yellow-1);
+		border-color: var(--color-yellow-1);
 	}
 	&:focus {
+		color: var(--color-blue-3);
+		background-color: var(--color-brand);
 		&:not(:focus-visible) {
-			outline: none;
+			box-shadow: 0 0 0.44rem white;
+			outline: solid 0.1rem white;
 		}
+	}
+	&:active {
+		color: white;
 	}
 }
 
@@ -38,7 +50,7 @@ button {
 	text-align: center;
 	white-space: nowrap;
 
-	color: var(--color-blue-4);
+	color: white;
 	background-color: var(--color-gold-0);
 
 	border: 1px solid transparent;

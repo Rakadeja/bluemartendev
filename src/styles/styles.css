@@ -41,6 +41,107 @@
   --corner-roundness: 1.6rem;
 }
 
+.debug-borders * {
+  border: none;
+}
+
+.debug-borders *:hover {
+  border: 2px solid red;
+}
+
+.debug-borders *:focus {
+  border: 1px dashed blue;
+}
+
+.debug-borders *:active {
+  border: 2px solid yellow;
+}
+
+.debug-borders *:focus-visible {
+  border: 2px solid orange;
+}
+
+.debug-borders *:focus-within {
+  border: 2px solid purple;
+}
+
+.debug-borders *:focus-visible:hover {
+  border: 2px solid pink;
+}
+
+.debug-borders *:focus-within:hover {
+  border: 2px solid lime;
+}
+
+.debug-borders *:focus-visible:focus-within {
+  border: 2px solid cyan;
+}
+
+#svg-shape-gradient {
+  --color-1: #ff00fe;
+  --color-2: #00044f;
+  --color-3: #0082ff;
+  --color-4: #00e8ff;
+}
+
+@keyframes fadeOpacityIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Start above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in position */
+  }
+}
+.fadeIn {
+  animation: fadeIn 0.24s ease forward;
+}
+
+@keyframes wiggle-scale {
+  0% {
+    transform: scale(1.2) translateX(0);
+  }
+  25% {
+    transform: scale(1.2) translateX(-2px) rotateY(8deg);
+  }
+  50% {
+    transform: scale(1.2) translateX(1px) rotateX(0deg);
+  }
+  75% {
+    transform: scale(1.2) translateX(-2px) rotateX(-12deg);
+  }
+  100% {
+    transform: scale(1.2) translateX(0);
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px) rotateY(8deg);
+  }
+  50% {
+    transform: translateX(1px) rotateX(0deg);
+  }
+  75% {
+    transform: translateX(-2px) rotateX(-12deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.wiggle {
+  animation: wiggle 1.2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .container {
   padding: 0.88em;
   border-radius: var(--corner-roundness);
@@ -75,16 +176,28 @@ button {
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
-  background-color: red;
+  background-color: var(--color-blue-4);
   border: 1px solid transparent;
   border-radius: 0.33rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: white;
 }
 button:hover {
-  color: red;
+  color: var(--color-blue-3);
+  background-color: var(--color-brand);
+  box-shadow: 0 0 0.22rem var(--color-yellow-1);
+  border-color: var(--color-yellow-1);
+}
+button:focus {
+  color: var(--color-blue-3);
+  background-color: var(--color-brand);
 }
 button:focus:not(:focus-visible) {
-  outline: none;
+  box-shadow: 0 0 0.44rem white;
+  outline: solid 0.1rem white;
+}
+button:active {
+  color: white;
 }
 
 .btn {
@@ -95,7 +208,7 @@ button:focus:not(:focus-visible) {
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
-  color: var(--color-blue-4);
+  color: white;
   background-color: var(--color-gold-0);
   border: 1px solid transparent;
   border-radius: 0.33rem;
@@ -116,27 +229,47 @@ button:focus:not(:focus-visible) {
   outline: solid 0.1rem white;
 }
 
+img {
+  opacity: 0.94;
+  transition: transform 0.3s ease-in-out;
+}
 img:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 svg {
   width: 100%;
-  height: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .shape .svg-gradient-path {
   paint-order: stroke;
   stroke: #00044f;
-  stroke-width: 0.66px;
+  stroke-width: 1.42px;
   fill: url(#svg-shape-gradient);
+  transition: transform 0.24s ease;
 }
 
-#svg-shape-gradient {
-  --color-1: #ff00fe;
-  --color-2: #00044f;
-  --color-3: #0082ff;
-  --color-4: #00e8ff;
+.shape:hover {
+  transition: transform 0.08s ease;
+  transform: scale(1.16);
+}
+
+.shape:active {
+  transform: scale(1.87);
+}
+
+.shape .svg-gradient-path:hover {
+  stroke: url(#svg-shape-gradient); /* or your desired hover effect */
+  fill: black; /* optionally adjust the fill if needed */
+}
+
+.shape .svg-gradient-path-sub {
+  fill: url(#svg-shape-gradient);
+}
+.shape .svg-gradient-path-sub:hover {
+  fill: white;
 }
 
 h1 {
@@ -176,62 +309,13 @@ a:hover {
   color: var(--color-text);
 }
 
-main {
-  flex: 1;
+.text-column {
   display: flex;
+  max-width: 48rem;
+  flex: 0.6;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 1rem;
-  width: 100%;
-  max-width: 64rem;
   margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-html, body {
-  min-height: 100vh; /* Ensures the viewport height is respected */
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  background-attachment: fixed;
-  background-color: var(--color-lblue-1);
-  background: linear-gradient(180deg, var(--color-blue-4) 8%, var(--color-blue-3) 13%, var(--color-lblue-0) 77.77%, var(--color-blue-4) 89%, black 100%);
-}
-
-pre {
-  color: white;
-  font-size: 16px;
-  font-family: var(--font-family);
-  background-color: var(--color-secondary);
-  border-radius: 3px;
-  box-shadow: var(--shadow-drop);
-  padding: 0.5em;
-  overflow-x: auto;
-}
-
-.frame-slot {
-  border: 2px solid white;
-  border-radius: 3px;
-  box-shadow: var(--shadow-drop);
-  padding: 4px 4px 24px 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%; /* Make the frame take up the full width */
-  height: 100%; /* Make the frame take up the full height */
 }
 
 .frame-3d {
@@ -247,14 +331,9 @@ pre {
   z-index: 9999; /* Ensures it is on top of other elements */
   pointer-events: none; /* Allows interaction */
   opacity: 0;
-  animation: fadeIn 2s ease-in forwards; /* Adjust duration as needed */
+  animation: fadeOpacityIn 2s ease-in forwards; /* Adjust duration as needed */
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
 /* ✅ Ensure 3D scene doesn't cover UI */
 .threlte-container {
   position: fixed; /* Keeps it in place */
@@ -274,13 +353,65 @@ pre {
   align-items: center;
 }
 
-.text-column {
+.app {
+  height: auto;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
   display: flex;
-  max-width: 48rem;
-  flex: 0.6;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+pre {
+  color: white;
+  font-size: 12px;
+  font-family: var(--font-family);
+  background-color: var(--color-secondary);
+  box-shadow: var(--shadow-drop);
+  overflow-x: auto;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
+  align-items: stretch;
+  /* Background Stuff */
+  background-attachment: fixed;
+  background-color: var(--color-lblue-1);
+  background: linear-gradient(180deg, var(--color-blue-4) 8%, var(--color-blue-3) 13%, var(--color-lblue-0) 77.77%, var(--color-blue-4) 89%, black 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.frame-slot {
+  border: 2px solid white;
+  border-radius: 3px;
+  box-shadow: var(--shadow-drop);
+  padding: 4px 4px 24px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
 input {
@@ -304,24 +435,4 @@ input {
   h1 {
     font-size: 2.4rem;
   }
-}
-@keyframes wiggle {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-2px) rotateY(8deg);
-  }
-  50% {
-    transform: translateX(1px) rotateX(0deg);
-  }
-  75% {
-    transform: translateX(-2px) rotateX(-12deg);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-.wiggle {
-  animation: wiggle 1.2s ease-in-out;
 }/*# sourceMappingURL=styles.css.map */

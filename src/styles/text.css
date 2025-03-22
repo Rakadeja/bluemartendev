@@ -33,4 +33,13 @@ a:hover {
 
 .page-description {
   color: var(--color-text);
+}
+
+.text-column {
+  display: flex;
+  max-width: 48rem;
+  flex: 0.6;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
 }/*# sourceMappingURL=text.css.map */

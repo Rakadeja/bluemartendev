@@ -1,22 +1,42 @@
+img {
+  opacity: 0.94;
+  transition: transform 0.3s ease-in-out;
+}
 img:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 svg {
   width: 100%;
-  height: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .shape .svg-gradient-path {
   paint-order: stroke;
   stroke: #00044f;
-  stroke-width: 0.66px;
+  stroke-width: 1.42px;
   fill: url(#svg-shape-gradient);
+  transition: transform 0.24s ease;
 }
 
-#svg-shape-gradient {
-  --color-1: #ff00fe;
-  --color-2: #00044f;
-  --color-3: #0082ff;
-  --color-4: #00e8ff;
+.shape:hover {
+  transition: transform 0.08s ease;
+  transform: scale(1.16);
+}
+
+.shape:active {
+  transform: scale(1.87);
+}
+
+.shape .svg-gradient-path:hover {
+  stroke: url(#svg-shape-gradient); /* or your desired hover effect */
+  fill: black; /* optionally adjust the fill if needed */
+}
+
+.shape .svg-gradient-path-sub {
+  fill: url(#svg-shape-gradient);
+}
+.shape .svg-gradient-path-sub:hover {
+  fill: white;
 }/*# sourceMappingURL=images.css.map */

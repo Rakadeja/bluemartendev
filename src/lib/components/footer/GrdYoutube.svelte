@@ -1,0 +1,11 @@
+<svg class="shape" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-label="youtube channel">
+    <defs>
+        <linearGradient id="svg-shape-gradient" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--color-1)" />
+            <stop offset="44%" stop-color="var(--color-2)" />
+            <stop offset="76%" stop-color="var(--color-3)" />
+            <stop offset="96%" stop-color="var(--color-4)" />
+          </linearGradient>
+    </defs>
+    <path class="svg-gradient-path" d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/>
+</svg>

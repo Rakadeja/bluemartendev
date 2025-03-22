@@ -2,8 +2,8 @@
 	import { T, Canvas } from '@threlte/core';
 	import { writable } from 'svelte/store';
 
-	import SilgiiHeadAttempt2 from '../assets/models/SilgiiHeadAttempt2.svelte';
-	import AnimationDebugControls from '../debug/AnimationDebugControls.svelte';
+	import SilgiiHeadAttempt2 from '../../assets/models/SilgiiHeadAttempt2.svelte';
+	import AnimationDebugControls from '../../debug/AnimationDebugControls.svelte';
 
 	// Define writable stores here
 	export let positionStore = writable([-7, 2, 0]);

@@ -22,7 +22,6 @@ let animate = false;
 	<h1 class="page-title">Commissions</h1>
 
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
+		Likely going to have a form for sending a commission request, and show a gallery of commissions in a slideshow.
 	</p>
 </div>

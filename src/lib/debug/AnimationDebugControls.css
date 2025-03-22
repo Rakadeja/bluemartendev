@@ -1,0 +1,21 @@
+.debug-panel {
+  pointer-events: auto;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.debug-panel label {
+  display: block;
+  margin-top: 5px;
+}
+
+.debug-panel input {
+  width: 50px;
+  margin: 0 5px;
+}/*# sourceMappingURL=AnimationDebugControls.css.map */

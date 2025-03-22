@@ -11,7 +11,6 @@
 
 <style>
 	@import url('./about.css');
-	@import url('../../styles/styles.css');
 </style>
 
 <svelte:head>

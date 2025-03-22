@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { writable } from 'svelte/store';
 
-	// ✅ Receive writable stores, NOT values
+	// Receive writable stores, NOT values
 	export let positionStore;
 	export let scaleStore;
 	export let rotationStore;
@@ -9,7 +9,7 @@
 
     function updateStore(store, index, event) {
 	store.update(values => {
-		// 🔥 FIX: Ensure values is always an array
+		// Ensure values is always an array
 		if (!Array.isArray(values)) return [0, 0, 0]; 
 
 		const newValues = [...values];
@@ -46,24 +46,5 @@
 </div>
 
 <style>
-.debug-panel {
-	pointer-events: auto; /* Makes the element non-interactive */
-    position: fixed; /* Ensures it stays in place even when scrolling */
-    bottom: 10px; /* Positions it 10px from the bottom of the screen */
-    left: 10px; /* Keeps it 10px from the left edge */
-    background: rgba(0, 0, 0, 0.7); /* Keeps the semi-transparent background */
-    color: white; /* Keeps the text color white */
-    padding: 10px; /* Maintains the padding */
-    border-radius: 5px; /* Keeps the rounded corners */
-    z-index: 9999; /* Ensures it's above other elements */
-}
-
-	label {
-		display: block;
-		margin-top: 5px;
-	}
-	input {
-		width: 50px;
-		margin: 0 5px;
-	}
+	@import url('./AnimationDebugControls.css');
 </style>

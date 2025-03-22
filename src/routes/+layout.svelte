@@ -1,9 +1,9 @@
 <script lang="ts">
 	import '../styles/styles.css';
 
-	import Navbar from './Navbar.svelte';
-	import Footer from './Footer.svelte';
-	import ThrelteScene from './ThrelteScene.svelte'; // ✅ Import the 3D scene
+	import Navbar from '../lib/components/Navbar.svelte';
+	import Footer from '../lib/components/Footer.svelte';
+	import ThrelteScene from '../lib/components/ThrelteScene.svelte'; // Import the 3D scene
 
 	import { onDestroy, onMount } from 'svelte';
 	import { writable } from 'svelte/store';
@@ -13,7 +13,7 @@
 
 	// import AnimationDebugControls from '../lib/debug/AnimationDebugControls.svelte';
 
-	// // ✅ Define writable stores here
+	//  Define writable stores
 	// export let positionStore = writable([0, 0, 0]);
 	// export let scaleStore = writable([1, 1, 1]);
 	// export let rotationStore = writable([0, 0, 0]);
@@ -43,7 +43,7 @@
 	<Navbar />
 
 	<main>
-		<!-- {#key sceneKey} -->
+		<!-- {#key sceneKey} 😭 --> 
 		<div class="frame-3d">
 			<ThrelteScene />
 		</div>
@@ -54,6 +54,6 @@
 	</main>
 
 	<Footer />
-	<!-- ✅ Debug UI modifies store values -->
+	<!-- Debug UI modifies store values -->
 	<!-- <AnimationDebugControls {positionStore} {scaleStore} {rotationStore} {actionIndexStore} /> -->
 </div>

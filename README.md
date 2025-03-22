@@ -1,22 +1,35 @@
-# create-svelte
+# Portfolio Site
+I've been meaning to make my own custom portfolio site so that I'm not relying on carrd.co for any longer.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## 3D Support
+- Three.js integration using Threlte!
+- Some kind of funny 3D mascot character. (Might make into a chat agent in the future)
 
-## Creating a project
+## 2D/3D Art Gallery
+- 2D/3D art gallery that imports entries from .json files.
+- Can swap between 2D and 3D view modes.
+- 3D view navigates slightly differently.
+- 3D models have turntable animations and can be paused.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Projects
+- Loading in project details from .json files.
+- Project title, description and preview logo/images.
+- Directs to the project's full page. (project must exist in '/routes/projects/projectname')
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Portfolio
+- Explaining what I specialize in.
+- Showcasing any paid work I've done, like 2D/3D art commissions.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## About/Info/Contact Page
+- Personal information.
+- Commission form(s).
+- Contact information, maybe a preview of my latest tumblr/x.com post or something blog-like.
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependencies with `npm install`.
+
+Start a development server:
 
 ```bash
 npm run dev
@@ -27,7 +40,7 @@ npm run dev -- --open
 
 ## Building
 
-To create a production version of your app:
+To create a production version of this app:
 
 ```bash
 npm run build
@@ -35,4 +48,5 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Deployment
+TBD

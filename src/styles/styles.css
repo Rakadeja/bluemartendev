@@ -144,6 +144,107 @@
   animation-fill-mode: forwards;
 }
 
+.debug-borders * {
+  border: none;
+}
+
+.debug-borders *:hover {
+  border: 2px solid red;
+}
+
+.debug-borders *:focus {
+  border: 1px dashed blue;
+}
+
+.debug-borders *:active {
+  border: 2px solid yellow;
+}
+
+.debug-borders *:focus-visible {
+  border: 2px solid orange;
+}
+
+.debug-borders *:focus-within {
+  border: 2px solid purple;
+}
+
+.debug-borders *:focus-visible:hover {
+  border: 2px solid pink;
+}
+
+.debug-borders *:focus-within:hover {
+  border: 2px solid lime;
+}
+
+.debug-borders *:focus-visible:focus-within {
+  border: 2px solid cyan;
+}
+
+#svg-shape-gradient {
+  --color-1: #ff00fe;
+  --color-2: #00044f;
+  --color-3: #0082ff;
+  --color-4: #00e8ff;
+}
+
+@keyframes fadeOpacityIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Start above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in position */
+  }
+}
+.fadeIn {
+  animation: fadeIn 0.24s ease forward;
+}
+
+@keyframes wiggle-scale {
+  0% {
+    transform: scale(1.2) translateX(0);
+  }
+  25% {
+    transform: scale(1.2) translateX(-2px) rotateY(8deg);
+  }
+  50% {
+    transform: scale(1.2) translateX(1px) rotateX(0deg);
+  }
+  75% {
+    transform: scale(1.2) translateX(-2px) rotateX(-12deg);
+  }
+  100% {
+    transform: scale(1.2) translateX(0);
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px) rotateY(8deg);
+  }
+  50% {
+    transform: translateX(1px) rotateX(0deg);
+  }
+  75% {
+    transform: translateX(-2px) rotateX(-12deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.wiggle {
+  animation: wiggle 1.2s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .container {
   padding: 0.88em;
   border-radius: var(--corner-roundness);

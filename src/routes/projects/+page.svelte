@@ -5,10 +5,6 @@
 	let animate = false;
 	let projects = [];
 
-	let projects3D = [];
-
-	let toggle2D3DArt = false;
-
 	// Toggle animation state
 	function toggleAnimation() {
 		animate = !animate;

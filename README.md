@@ -51,4 +51,8 @@ You can preview the production build with `npm run preview`.
 ## Deployment
 TBD
 
+## Latest Screenshot
+![image](https://github.com/user-attachments/assets/c038f6cc-d1d3-4f92-9d90-ecf7adbe5227)
+
+# Previous Screenshot
 ![image](https://github.com/user-attachments/assets/553aa021-cbb5-4aa7-b50b-37e4d7cad34b)

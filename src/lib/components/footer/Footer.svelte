@@ -3,12 +3,12 @@
 	import GrdDiscord from "./GrdDiscord.svelte";
 	import GrdEmail from "./GrdEmail.svelte";
 	import GrdFacebook from "./GrdFacebook.svelte";
-	import GrdGitHub from "./GrdGitHub.svelte";
+	import GrdGithub from "./GrdGithub.svelte";
 	import GrdInstagram from "./GrdInstagram.svelte";
 	import GrdTikTok from "./GrdTikTok.svelte";
 	import GrdTumblr from "./GrdTumblr.svelte";
 	import GrdTwitter from "./GrdTwitter.svelte";
-	import GrdYouTube from "./GrdYouTube.svelte";
+	import GrdYoutube from "./GrdYoutube.svelte";
  </script>
 
 <footer class="footer">
@@ -34,7 +34,7 @@
 			/> -->
 		</a>
 		<a href="https://www.youtube.com/channel/rakadeja" target="_blank" rel="noopener noreferrer">
-			<GrdYouTube />
+			<GrdYoutube />
 			<!-- <img
 				class="svg-gradient-path"
 				src="/images/svg/logos/bxl-youtube.svg"
@@ -42,7 +42,7 @@
 			/> -->
 		</a>
 		<a href="https://github.com/rakadeja" target="_blank" rel="noopener noreferrer">
-			<GrdGitHub />
+			<GrdGithub />
 			<!-- <img class="svg-gradient-path" src="/images/svg/logos/bxl-github.svg" alt="github page" /> -->
 		</a>
 		<a href="https://github.com/rakadeja" target="_blank" rel="noopener noreferrer">

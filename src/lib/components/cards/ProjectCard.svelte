@@ -21,14 +21,14 @@
      export let id;
 </script>
 
-<div class="project-card">
+<div class="card">
     <a href="projects/{id}">
         <img src="{imageURL}" alt={title} />
     </a>
     <!-- src="https://placehold.co/128x128/000000/FFF/?text={title}"  -->
-    <h2 class="card-title">{title}</h2>
-    <p class="card-text">{description}</p>
+    <h2>{title}</h2>
+    <p>{description}</p>
     <div class="card-buttons">
-        <a href="projects/{id}" class="btn">View Project</a>
+        <button><a href="projects/{id}">View Project</a></button>
     </div>
 </div>

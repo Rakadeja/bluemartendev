@@ -10,8 +10,8 @@
 </script>
 
 <svelte:head>
-	<title>Wild Midnight</title>
-	<meta name="description" content="A stylized, 3D animal survival MMORPG that takes place in the distant future." />
+	<title>Cave Lion</title>
+	<meta name="description" content="A fiction novel following the story of a young lion cub who becomes physically separated from her pride." />
 </svelte:head>
 
 <div
@@ -19,7 +19,7 @@
 	in:fade={{ delay: 1000, duration: 2000 }}
 	out:fly={{ y: 200, duration: 999 }}
 >
-	<h1 class="page-title">Wild Midnight</h1>
+	<h1 class="page-title">Cave Lion</h1>
 	<h2>Story</h2>
-	<p>150 million years from now, the world is an utterly unrecognizable place.</p>
+	<p>A fiction novel following the story of a young lion cub who becomes physically separated from her pride.</p>
 </div>

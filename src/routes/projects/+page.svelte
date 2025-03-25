@@ -1,53 +1,71 @@
 <script>
+	import { fade, fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import { fly, fade } from 'svelte/transition';
-	import ProjectCard from './ProjectCard.svelte';
 
 	let animate = false;
+	let projects = [];
+
+	let projects3D = [];
+
+	let toggle2D3DArt = false;
+
+	// Toggle animation state
+	function toggleAnimation() {
+		animate = !animate;
+	}
+
+	// Use dynamic import so Vite watches the JSON file for updates
+	async function loadProjects() {
+		try {
+			const data = await import('./projects.json');
+			projects = data.default;
+			console.log('Projects Data Loaded: ' + projects);
+		} catch (error) {
+			console.error('Failed to load JSON:', error);
+		}
+	}
 
 	onMount(() => {
+		loadProjects();
 		animate = true;
-    });
-
+	});
 </script>
 
 <svelte:head>
 	<title>Projects</title>
-	<meta name="description" content="Current projects and their status!" />
+	<meta name="description" content="Current projects, both active and inactive." />
 </svelte:head>
 
-<style>
-	@import url('./projects.css');
-</style>
-
-<section class="text-column" in:fade={{delay: 1000, duration: 2000}} out:fly={{ y:200, duration:999}}>
+<div
+	class="text-column"
+	in:fade={{ delay: 1000, duration: 2000 }}
+	out:fly={{ y: 200, duration: 999 }}
+>
 	<h1 class="page-title">Projects</h1>
-
-	<div class="container flex-grid-container">
-		<div class="container flex-grid-item">
-			<ProjectCard 
-				title="Project Spectrum"
-				description="Stylized animal MMORPG!"
-                imageURL="projects/project-spectrum.svg"
-				id="project-spectrum"
-			/>
-		</div>
-		<div class="container flex-grid-item">
-			<ProjectCard 
-				title="Pawstone"
-				description="Rescue and nurture cats!"
-                imageURL="projects/pawstone.svg"
-				id="pawstone"
-			/>
-		</div>
-		<div class="container flex-grid-item">
-			<ProjectCard 
-				title="Wild Midnight"
-				description="Animal survival MMO!"
-                imageURL="projects/wild-midnight.svg"
-				id="wild-midnight"
-			/>
-		</div>
+	<div class="text-column">
+		<p>Here are my projects that have been developed enough for me to share here!</p>
 	</div>
 
-</section>
+	<div class="card-box">
+		{#each projects as project, index}
+			<!-- Loop through the projects array -->
+			<div
+				class="card"
+				transition:fly={{ y: animate ? -100 : 0, duration: 999, delay: index * 50 }}
+			>
+				<h2>{project.title}</h2>
+				<h3>{project.subtitle}</h3>
+				<a href={project.id}><img src={project.url} alt={project.title} /></a>
+				<small>{project.category}</small>
+				<p>{project.description}</p>
+				<a href={project.id}>
+					<button>View Project</button>
+				</a>
+			</div>
+		{/each}
+	</div>
+</div>
+
+<style>
+	@import url('./gallery.css');
+</style>

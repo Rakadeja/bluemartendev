@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Cave Lion",
+        "subtitle": "Fiction Novel",
+        "category": "Book",
+        "description": "The journey of a lonely lion cub.",
+        "id": "projects/cave-lion",
+        "url": "images/projects/Cave Lion_AI.png"
+    },
+    {
+        "title": "Project Spectrum",
+        "subtitle": "Narrative-Driven",
+        "category": "Indie Game",
+        "description": "Stylized 3D animal RPG!",
+        "id": "projects/project-spectrum",
+        "url": "images/projects/Project Spectrum_AI.png"
+    },
+    {
+        "title": "Pawstone",
+        "subtitle": "Simulation",
+        "category": "Indie Game",
+        "description": "Cat rescue game!",
+        "id": "projects/pawstone",
+        "url": "images/projects/Pawstone_AI.png"
+    },
+    {
+        "title": "Wild Midnight",
+        "subtitle": "Speculative Evolution",
+        "category": "Indie Game",
+        "description": "Animal surival MMO!",
+        "id": "projects/wild-midnight",
+        "url": "images/projects/Wild Midnight_AI.png"
+    }
+]

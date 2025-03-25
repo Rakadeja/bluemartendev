@@ -13,13 +13,15 @@ button {
 	background-color: var(--color-blue-4);
 
 	border: 1px solid transparent;
-	border-radius: 0.33rem;
+	border-radius: var(--corner-roundness);
 
-	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
 	color: white;
 
 	&:hover {
+		transform: scale(1.02);
 		color: var(--color-blue-3);
 		background-color: var(--color-brand);
 
@@ -36,42 +38,53 @@ button {
 	}
 	&:active {
 		color: white;
+		transform: scale(1.08);
+		box-shadow: 0 0 0.28rem white;
 	}
+}
+
+.button-narrow {
+	margin-left: 0.16rem;
+	margin-right: 0.16rem;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 0.24rem;
+	font-size: 1.24rem;
 }
 
 // Non-HTML Button
-.btn {
-	padding: 0.66rem 1.33rem;
-	margin: 0.66rem 0;
+// .btn {
+// 	padding: 0.66rem 1.33rem;
+// 	margin: 0.66rem 0;
 
-	font-size: 1.33rem;
-	font-weight: 600;
-	line-height: 1.5;
-	text-align: center;
-	white-space: nowrap;
+// 	font-size: 1.33rem;
+// 	font-weight: 600;
+// 	line-height: 1.5;
+// 	text-align: center;
+// 	white-space: nowrap;
 
-	color: white;
-	background-color: var(--color-gold-0);
+// 	color: white;
+// 	background-color: var(--color-gold-0);
 
-	border: 1px solid transparent;
-	border-radius: 0.33rem;
+// 	border: 1px solid transparent;
+// 	border-radius: 0.33rem;
 
-	transition: color 0.16s ease-in-out, background-color 0.16s ease-in-out, border-color 0.16s ease-in-out, box-shadow 0.16s ease-in-out;
+// 	transition: color 0.16s ease-in-out, background-color 0.16s ease-in-out, border-color 0.16s ease-in-out, box-shadow 0.16s ease-in-out;
 
-	&:hover {
-		color: var(--color-blue-3);
-		background-color: var(--color-brand);
+// 	&:hover {
+// 		color: var(--color-blue-3);
+// 		background-color: var(--color-brand);
 
-		box-shadow: 0 0 0.22rem var(--color-yellow-1);
-		border-color: var(--color-yellow-1);
-	}
+// 		box-shadow: 0 0 0.22rem var(--color-yellow-1);
+// 		border-color: var(--color-yellow-1);
+// 	}
 
-	&:focus {
-		color: var(--color-blue-3);
-		background-color: var(--color-brand);
-		&:not(:focus-visible) {
-			box-shadow: 0 0 0.44rem white;
-			outline: solid 0.1rem white;
-		}
-	}
-}
+// 	&:focus {
+// 		color: var(--color-blue-3);
+// 		background-color: var(--color-brand);
+// 		&:not(:focus-visible) {
+// 			box-shadow: 0 0 0.44rem white;
+// 			outline: solid 0.1rem white;
+// 		}
+// 	}
+// }

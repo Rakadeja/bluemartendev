@@ -22,3 +22,7 @@
 <button on:click={toggleDebug}>
     {isDebugEnabled ? "Disable Debug Borders" : "Enable Debug Borders"}
 </button>
+
+<style>
+    @import url('./DebugBorders.css');
+</style>

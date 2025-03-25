@@ -1,47 +1,7 @@
-.gallery-box {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-  gap: 16px;
-  border-radius: var(--corner-roundness);
-  box-shadow: var(--shadow-drop);
-  border-collapse: collapse;
-  padding: 12px;
-}
-
-.art-piece {
-  padding: 8px;
-  text-align: center;
-  border-radius: var(--corner-roundness);
-  box-shadow: var(--shadow-drop);
-  background-clip: padding-box, border-box;
-  background-origin: border-box;
-  background-color: var(--color-primary);
-  background: linear-gradient(var(--color-blue-4) 0%, var(--color-primary) 50%, black);
-}
-
-.gallery-image {
-  max-width: 100%;
-  border-radius: var(--corner-roundness);
-  transition: transform 0.3s ease;
-}
-
-.gallery-image:hover {
-  transform: scale(1.05);
-}
-
-.gallery-caption h3 {
-  margin: 8px 0 4px;
-  font-size: 1.2rem;
-  color: var(--color-text-heading);
-}
-
-.gallery-caption p {
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin: 0;
-  font-weight: 700;
-  color: var(--color-accent);
-}
-
-.gallery-caption small {
-  color: var(--color-accent);
-  font-weight: 300;
 }/*# sourceMappingURL=gallery.css.map */

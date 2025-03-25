@@ -36,6 +36,7 @@
 }
 .navbar nav ul {
   list-style: none;
+  list-style-type: none;
   position: relative;
   padding: 0.12em;
   margin: 0 4.2em 0 4.2em;
@@ -46,6 +47,7 @@
 }
 .navbar nav ul li {
   position: relative;
+  list-style-type: none;
   padding: 0.66rem;
   margin: 0 0.8em 0 0.8em;
   transition: color 0.16s ease-in-out, background-color 0.16s ease-in-out, border-color 0.16s ease-in-out, box-shadow 0.16s ease-in-out;

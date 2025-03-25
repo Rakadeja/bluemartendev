@@ -9,33 +9,50 @@
 	});
 </script>
 
+<svelte:head>
+	<title>About</title>
+	<meta name="description" content="About me" />
+</svelte:head>
+
+<div
+	class="container"
+	in:fade={{ delay: 1000, duration: 2000 }}
+	out:fly={{ y: 200, duration: 999 }}
+>
+	<h1 class="page-title">About Me</h1>
+	<div class="container-flex">
+		<div class="column">
+			<h2>Details</h2>
+			<p>30 - f - any pronouns</p>
+
+			<h2>Astrology</h2>
+			<p>♒🔆♓🌙⛎⬆️</p>
+
+			<h2>Personality Tests</h2>
+			<p>INFP-T</p>
+
+			<h2>Human Design</h2>
+			<ol>
+				<li>Manifesting Generator</li>
+				<li>6/2 Profile</li>
+				<li>Left Angle Cross of Informing (22/47 | 11/12)</li>
+			</ol>
+		</div>
+
+		<div class="column">
+			<h2>Hobbies</h2>
+			<ol>
+				<li>Listening to music</li>
+				<li>Dancing and yoga</li>
+				<li>Draws a lot of animals and trippy stuff</li>
+				<li>Creates 3D models of animals and environments</li>
+				<li>Makes stickers, prints, cards and stencils</li>
+				<li>Likes to do natural arts and crafts, like carving, making jewelry, and painting shells</li>
+			</ol>
+		</div>
+	</div>
+</div>
+
 <style>
 	@import url('./about.css');
 </style>
-
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
-</svelte:head>
-
-<div class="text-column" in:fade={{delay: 1000, duration: 2000}} out:fly={{ y:200, duration:999}}>
-	<h1 class="page-title">About this app</h1>
-
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	<pre>npm create svelte@latest</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
-</div>

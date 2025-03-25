@@ -4,7 +4,7 @@
 
 	let animate = false;
 	let artGallery = [];
-	
+
 	let artGallery3D = [];
 
 	let toggle2D3DArt = false;
@@ -27,8 +27,7 @@
 
 	async function load3DArt() {
 		// Add 3D functionality here
-        // console.log('Loading 3D Art...');
-
+		// console.log('Loading 3D Art...');
 		// try {
 		// 	const data = await import('./art_gallery3D.json');
 		// 	artGallery = data.default;
@@ -44,10 +43,6 @@
 	});
 </script>
 
-<style>
-	@import url('./gallery.css');
-</style>
-
 <svelte:head>
 	<title>Gallery</title>
 	<meta name="description" content="Art, illustrations and photos." />
@@ -59,25 +54,35 @@
 	out:fly={{ y: 200, duration: 999 }}
 >
 	<h1 class="page-title">Gallery</h1>
-	<div class="container">
-		<button on:click={() => loadArt()}>2D</button>
+
+	<div class="text-column">
+		<p>Welcome to my gallery! The button above toggles whether you're viewing 2D or 3D content.</p>
+	</div>
+
+	<div class="container gallery-container">
+		<button class="button-narrow" on:click={() => loadArt()}>2D Art</button>
+		<button class="button-narrow">3D Art</button>
+		<button class="button-narrow">Sort By Name</button>
+		<button class="button-narrow">Sort By Date</button>
 		<!-- <button on:click={toggle2D3DArt}>3D</button> -->
 	</div>
-	<p>Welcome to my gallery! The buttons above toggle whether you're viewing 2D or 3D content.</p>
-	<div class="gallery-box">
+
+	<div class="card-box">
 		{#each artGallery as piece, index}
 			<!-- Loop through the artGallery array -->
 			<div
-				class="art-piece"
+				class="card"
 				transition:fly={{ y: animate ? -100 : 0, duration: 999, delay: index * 50 }}
 			>
-				<img class="gallery-image" src={piece.url} alt={piece.title} />
-				<div class="gallery-caption">
-					<h3>{piece.title}</h3>
-					<p>{piece.category}</p>
-					<small>{piece.description}</small>
-				</div>
+				<img src={piece.url} alt={piece.title} />
+				<h3>{piece.title}</h3>
+				<p>{piece.category}</p>
+				<small>{piece.description}</small>
 			</div>
 		{/each}
 	</div>
 </div>
+
+<style>
+	@import url('./gallery.css');
+</style>

@@ -12,6 +12,8 @@
 @import "./images.scss";
 @import "./text.scss";
 
+@import "./cards.scss";
+
 @import "./3d.scss";
 
 // Root wrapper, set viewport height.
@@ -74,6 +76,7 @@ body {
 }
 
 .frame-slot {
+	// z-index: -2;
     border: 2px solid white;
     border-radius: var(--corner-roundness);
     box-shadow: var(--shadow-drop);

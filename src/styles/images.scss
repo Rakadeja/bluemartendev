@@ -31,31 +31,13 @@ svg {
 }
 
 .shape .svg-gradient-path:hover {
-    stroke: url(#svg-shape-gradient); /* or your desired hover effect */
-    fill: black; /* optionally adjust the fill if needed */
+    stroke: url(#svg-shape-gradient);
+    fill: black;
 }
 
 .shape .svg-gradient-path-sub {
-	// stroke: url(#svg-shape-gradient);
 	fill: url(#svg-shape-gradient);
 	&:hover {
-		// stroke:url(#svg-shape-gradient);
 		fill: white;
 	}
 }
-
-
-
-// .shape:hover path, 
-// .shape:hover rect, 
-// .shape:hover circle, 
-// .shape:hover polygon, 
-// .shape:hover line, 
-// .shape:hover ellipse {
-//     stroke: url(#svg-shape-gradient); /* or your desired hover effect */
-//     fill: none; /* optionally adjust the fill if needed */
-// }
-
-// .shape:hover .svg-gradient-path {
-//     stroke: white;
-// }

@@ -1,10 +1,11 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import SlidingBackground from '$lib/components/sliding-background/SlidingBackground.svelte';
 
 	let animate = false;
-	let artGallery = [];
 
+	let artGallery = [];
 	let artGallery3D = [];
 
 	let toggle2D3DArt = false;
@@ -53,6 +54,8 @@
 	in:fade={{ delay: 1000, duration: 2000 }}
 	out:fly={{ y: 200, duration: 999 }}
 >
+	<SlidingBackground jsonPath="/json/images.json" />
+
 	<h1 class="page-title">Gallery</h1>
 
 	<div class="text-column">

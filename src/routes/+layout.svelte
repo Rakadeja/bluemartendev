@@ -3,7 +3,9 @@
 
 	import Navbar from '../lib/components/navbar/Navbar.svelte';
 	import Footer from '../lib/components/footer/Footer.svelte';
-	import ThrelteScene from '../lib/components/3d/ThrelteScene.svelte'; // Import the 3D scene
+	// import ThreeScene from '../lib/components/3d/ThreeScene.svelte';
+	import SilgiiHeadAttempt2 from '../lib/assets/models/SilgiiHeadAttempt2.svelte';
+	import AnimationDebugControls from '../lib/debug/AnimationDebugControls.svelte';
 	import DebugBorders from '../lib/debug/DebugBorders.svelte';
 
 	import { onDestroy, onMount } from 'svelte';
@@ -15,8 +17,13 @@
 
 	let interval: NodeJS.Timeout;
 
+	export let positionStore = writable([-4.5, 3.7, 0]);
+	export let rotationStore = writable([24, 55, 0]);
+	export let scaleStore = writable([0.25, 0.25, 0.25]);
+	export let actionIndexStore = writable(0);
+
 	onMount(() => {
-		changeState('active'); // Set initial state to active
+		changeState('active');
 		let seconds = 0;
 		interval = setInterval(() => {
 			seconds += 1;
@@ -39,9 +46,18 @@
 	<Navbar />
 	<main>
 		<!-- {#key sceneKey} 😭 --> 
-		<div class="frame-3d">
-			<ThrelteScene />
-		</div>
+		<!-- <ThreeScene /> -->
+		<SilgiiHeadAttempt2 
+		positionStore={positionStore}
+		rotationStore={rotationStore}
+		scaleStore={scaleStore}
+		actionIndexStore={actionIndexStore}/>
+		 <!-- <AnimationDebugControls 
+		positionStore={positionStore}
+		rotationStore={rotationStore}
+		scaleStore={scaleStore}
+		actionIndexStore={actionIndexStore} /> -->
+
 		<!-- {/key} -->
 		<div class="frame-slot" transition:slide>
 			<slot />

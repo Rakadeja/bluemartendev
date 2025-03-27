@@ -13,7 +13,7 @@
   .background-track {
     display: flex;
     width: max-content;
-    animation: scrollBackground 8s linear infinite;
+    animation: scrollBackground 60s linear infinite;
     will-change: transform;
   }
 
@@ -23,9 +23,12 @@
     background-size: cover;
     background-position: center;
     flex-shrink: 0;
+
+    opacity: 0;
+    animation: fadeOpacityIn 4.2s ease-in forwards;
   }
 
   @keyframes scrollBackground {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to { transform: translateX(-100%); }
   }

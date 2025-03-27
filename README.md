@@ -2,7 +2,7 @@
 I've been meaning to make my own custom portfolio site so that I'm not relying on carrd.co for any longer.
 
 ## 3D Support
-- Three.js integration using Threlte!
+- Three.js integration!
 - Some kind of funny 3D mascot character. (Might make into a chat agent in the future)
 
 ## 2D/3D Art Gallery

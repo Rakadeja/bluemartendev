@@ -60,54 +60,7 @@
     });
 </script>
 
-<!-- <script lang="ts">
-	import { writable } from 'svelte/store';
-
-	// Receive writable stores, NOT values
-	export let positionStore;
-	export let scaleStore;
-	export let rotationStore;
-	export let actionIndexStore;
-
-    function updateStore(store, index, event) {
-	store.update(values => {
-		// Ensure values is always an array
-		if (!Array.isArray(values)) return [0, 0, 0]; 
-
-		const newValues = [...values];
-		newValues[index] = parseFloat(event.target.value) || 0;
-		return newValues;
-	});
-}
-
-const panel = document.getElementById('anim-debug-panel');
-
-let isDragging = false;
-let offsetX = 0;
-let offsetY = 0;
-
-// Start dragging
-panel.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    offsetX = e.offsetX;
-    offsetY = e.offsetY;
-});
-
-// Stop dragging
-document.addEventListener('mouseup', () => {
-    isDragging = false;
-});
-
-// Move the panel
-document.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-        panel.style.left = `${e.clientX - offsetX}px`;
-        panel.style.top = `${e.clientY - offsetY}px`;
-    }
-});
-</script> -->
-
-<div id="anim-debug-panel" bind:this={panel} on:mousedown={handleMouseDown} class="debug-panel" role="dialog" aria-label="Animation Debug Panel">
+<div id="anim-debug-panel" bind:this={panel} on:mousedown={handleMouseDown} class="debug-panel" role="dialog" aria-label="Animation Debug Panel" tabindex="0">
 	<h3>Debug Controls</h3>
 
 	<label>Position:

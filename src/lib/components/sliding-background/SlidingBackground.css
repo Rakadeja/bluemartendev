@@ -14,7 +14,7 @@
   display: flex;
   width: -moz-max-content;
   width: max-content;
-  animation: scrollBackground 8s linear infinite;
+  animation: scrollBackground 60s linear infinite;
   will-change: transform;
 }
 
@@ -24,6 +24,8 @@
   background-size: cover;
   background-position: center;
   flex-shrink: 0;
+  opacity: 0;
+  animation: fadeOpacityIn 4.2s ease-in forwards;
 }
 
 @keyframes scrollBackground {
@@ -31,6 +33,6 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }/*# sourceMappingURL=SlidingBackground.css.map */

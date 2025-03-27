@@ -20,9 +20,9 @@
 
 {#if images.length > 0}
   <div class="background-container">
-    <div class="background-track" style="width: {images.length * 200}vw;">
+    <div class="background-track">
       {#each [...images, ...images] as image}
-        <div class="background-image" style="background-image: url({image});" />
+        <div class="background-image" style="background-image: url({image});"></div>
       {/each}
     </div>
   </div>
